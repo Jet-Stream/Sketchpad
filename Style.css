@@ -1,25 +1,28 @@
 
 #container{
     display: flex;
-    border: 5px solid black;
-    justify-content: space-between;
-    width: 700px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
     margin: 0 auto;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+
+ 
 }
 .sticker{
-    font: bold;
+
     text-align: center;
     margin: 0 auto;
-    padding-top: 15px;
+    padding-top: 50px;
+}
+#reset{
+    text-align: center;
+    margin: 0 auto;
 }
 .gridDiv{
-    border: 1px solid black;
     width: 15px;
     height: 15px;
-    margin: 1px;
-    
+    border: 1px solid black;
 }
 #shaded1{
     background-color: #0000ee;
