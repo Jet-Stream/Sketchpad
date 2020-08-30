@@ -10,8 +10,16 @@ for(i=0;i<(16*16); i++){
     newDiv.style.height = `${(squareArea)}px`;
     newDiv.style.width = `${(squareArea)}px`;
     container.appendChild(newDiv);
+    
     newDiv.addEventListener('mouseover', () =>{
-      newDiv.id = 'shaded1';  
+      if (newDiv.id = 'shaded1'){
+        newDiv.addEventListener('mouseover', () =>{
+          newDiv.id = 'shaded2';
+        });
+      }
+      else {
+        newDiv.id = 'shaded1';  
+      }
     });
   }
 
@@ -33,20 +41,23 @@ for(i=0;i<=(numberOfSquares*numberOfSquares); i++){
         customSquareAreaSum += Math.floor((parseInt(customSquareArea)));
         container.appendChild(newDiv);
         newDiv.addEventListener('mouseover', () =>{
-          newDiv.id = 'shaded1';  
+          if (newDiv.id = 'shaded1'){
+            newDiv.addEventListener('mouseover', () =>{
+              newDiv.id = 'shaded2';
+            });
+          }
+          else{
+            newDiv.id = 'shaded1';  
+          }
         });
-        
-        
-      }
-      if (customSquareAreaSum >= containerArea){
+        }
+      if (Math.squrt(customSquareAreaSum)> containerHeight){
         while (container.lastChild){ //remove orphan squares
           container.removeChild(container.lastChild);
-        
-        break;
+          break;
       }
     } 
-
-} 
+}
 let resetButton = document.getElementById('reset')
   resetButton.addEventListener('click', () =>{
     reset(); 
