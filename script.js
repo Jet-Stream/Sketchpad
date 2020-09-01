@@ -51,13 +51,13 @@ for(i=0;i<=(numberOfSquares*numberOfSquares); i++){
           }
         });
         }
-      if (Math.squrt(customSquareAreaSum)> containerHeight){
-        while (container.lastChild){ //remove orphan squares
-          container.removeChild(container.lastChild);
-          break;
-      }
-    } 
-}
+        let j = customSquareAreaSum; //if the sum of the areas of the custom squares is greater than the 
+                                    //container area, remove the last child of the container until it is smaller
+        while (customSquareAreaSum >= containerArea){
+        container.removeChild(container.lastChild);
+       j-= (newDiv.style.height) * (newDiv.style.height);
+    }
+  }
 let resetButton = document.getElementById('reset')
   resetButton.addEventListener('click', () =>{
     reset(); 
